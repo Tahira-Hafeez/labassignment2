@@ -206,3 +206,11 @@ html{
     padding: 12px 30px;
     border-radius: 12px;
 }
+
+.item .block-text h1{
+    font-family: "Inter", "Segoe UI", 
+    Roboto, Helvetica, Arial, sans-serif ;
+    font-size: 90px;
+    margin-left: 25px;
+    font-weight: 800;
+}
