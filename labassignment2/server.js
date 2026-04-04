@@ -10,16 +10,11 @@ app.set("view engine", "ejs");
 // Serve static files from the 'public' directory
 app.use(express.static("public"));
 
-// Define a route for the '/contact-us' page
-app.get("/contact-us", function (req, res) {
-  // Render the 'contact-us.ejs' view
-  return res.render("contact-us");
-});
 
 // Define a route for the root URL ('/')
 app.get("/", function (req, res) {
-  // Render the 'homepage.ejs' view
-  return res.render("homepage");
+  // Render the 'index.ejs' view
+  return res.render("index");
 });
 
 // Start the server on port 3000
