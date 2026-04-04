@@ -127,7 +127,7 @@ html{
 
 .header-container .top-bar .order-btn{
     position: absolute;
-    top: 300px;
+    top: 350px;
     right: 580px;
     padding: 10px 20px;
     background-color:black;
@@ -300,7 +300,7 @@ html{
     height: 500px;
     width: 500px;
     margin-left: -120px;
- }
+}
 .item2 .block-text{
     display: flex;
     flex-direction: column;
@@ -1075,9 +1075,81 @@ html{
     .icons{
         margin-bottom: 20px;
     }
-   
 }
 
 
+    /* Search Box */
+.search-container {
+    text-align: center;
+    margin: 30px 0;
+}
 
+.search-box {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border:solid black;
+    font-size: 18px;
+    height:40px;
+    width: 380px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Search Results */
+.search-card {
+    background: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
+    margin: 20px 40px;
+    gap: 20px;
+}
+
+.search-card img {
+    height: 200px;
+    width: 200px;
+}
+
+.search-card .search-tag {
+    background-color: #ffa9c8;
+    padding: 8px 18px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.search-card .search-name {
+    font-size: 40px;
+    font-weight: 900;
+    font-family: "Inter", sans-serif;
+    margin-top: 10px;
+}
+
+.search-card .search-desc {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: "Inter", sans-serif;
+    margin-top: 5px;
+}
+
+.search-card .status-available {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.search-card .status-soldout {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    font-family: "Inter", sans-serif;
+}
+   
 
