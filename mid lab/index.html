@@ -1,4 +1,4 @@
-/*lab mid*/
+<!--removed all products(cookies)-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,17 +26,17 @@
         </svg>
       </div>
 
-      
+
       <button class="order-btn">
         <p>Order Now
       </button></p>
 
       <div class="menu-bar">
-         <img id="menubtn" src="menu.svg" alt="">
+        <img id="menubtn" src="menu.svg" alt="">
 
-          <div class="Menu-text">
-            <h1>Menu</h1>
-          </div>
+        <div class="Menu-text">
+          <h1>Menu</h1>
+        </div>
 
         <div id="navbar">
           <ul>
@@ -76,174 +76,40 @@
     <h3>Four new or returning flavors drop every Monday.Try them before they are gone!</h3>
   </div>
 
-<div class="search-container">
-    <input 
-        type="text" 
-        id="search-box" 
-        class="search-box"
-        placeholder="Search cookies... 🍪"
-    >
-</div>
 
-<div id="search-results"></div>
-
-  <div class="item">
-    <img class="cookie" src="cookie8.png" alt="">
-
-    <div class="block-text">
-      <p>This week only!</p>
-      <h1>S'mores Cookie</h1>
-      <h2>A graham cracker cookie packed with milk chocolate chips then topped
-        with a melty marshmallow, chocolate drizzle, and buttery graham cracker crumbs.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
+  <div class="lab">
+    <div class="section">
+      <h2>Featured Deals</h2>
+      <!-- Loader shown while AJAX fetches data -->
+      <div id="loader">Loading products</div>
+      <div id="product-container"></div>
     </div>
-
-  </div>
-
-  <div class="item2">
-
-
-    <img class="cookie" src="cookie.png" alt="">
-
-    <div class="block-text">
-      <p>This week only!</p>
-      <h1>Biscoff® Skillet Cookie</h1>
-      <h2>A lightly spiced Biscoff® cookie topped with fluffy mousse,
-        finished with crunchy Biscoff® pieces and a drizzle of melty Biscoff®.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
+    
+    <div id="modal-overlay">
+      <div id="modal-box">
+        <button id="modal-close">&#10005;</button>
+        <img id="modal-img" src="" alt="Product Image" />
+        <p id="modal-category"></p> 
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <div id="modal-meta">
+          <span id="modal-price"></span>
+          <span id="modal-rating"></span>
+        </div>
+      </div>
     </div>
-
   </div>
-
-  <div class="item3">
-
-
-    <img class="cookie" src="cookie9.png" alt="">
-
-    <div class="block-text">
-      <p>This week only!</p>
-      <h1>Raspberry Cheesecake</h1>
-      <h2>A true, classic vanilla cheesecake baked over a buttery graham cracker crust, then topped with
-        a tangy mouth-watering raspberry spread and a dollop of whipped cream.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
-    </div>
-
-  </div>
-
-
-  <div class="item4">
-
-
-    <img class="cookie" src="cookie3.png" alt="">
-
-    <div class="block-text">
-      <p>This week only!</p>
-      <h1>Buckeye Brownie Cookie</h1>
-      <h2>A decadent cookie featuring layers of chocolate
-        brownie, peanut butter and a smothering of melted semi-sweet chocolate.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
-    </div>
-
-  </div>
-
-  <div class="available">
-
-    <button class="date"> Always Available </button>
-    <h2>Classic Flavors</h2>
-    <h3>These flavors are here to stay!
-      Enjoy your classic favorites anytime.</h3>
-  </div>
-
-
-  
-  <div class="item5">
-
-
-    <img class="cookie" src="cookie1.png" alt="">
-
-    <div class="block-text">
-      <h1>Semi-Sweet Chocolate Chunk Cookie</h1>
-      <h2>Our classic cookie filled with irresistible semi-sweet chocolate
-       chunks and a sprinkle of flaky sea salt.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
-    </div>
-
-  </div>
-
-
-  
-  
-
-  <div class="item6">
-
-
-    <img class="cookie" src="cookie7.png" alt="">
-
-    <div class="block-text">
-      <h1>Pink Sugar Cookie</h1>
-      <h2>Our classic almond sugar cookie topped with 
-      a silky pink swoop of real almond frosting.</h2>
-
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
-    </div>
-
-  </div>
-
-
-  
-  <div class="item7">
-
-
-    <img class="cookie" src="cookie6.png" alt="">
-
-    <div class="block-text">
-      <h1>Chocolate Crumb Cookie ft. OREO®</h1>
-      <h2>A warm chocolate cookie mixed with OREO®A warm chocolate cookie mixed with OREO® cookie pieces, 
-        topped with smooth vanilla cream cheese frosting, and sprinkled with more OREO® cookie pieces. OREO
-         is a trademark of Mondelēz International group, used with permission.
-      </h2>
-
-
-      <button class="learn">Learn More</button>
-      <button class="order">Order Now</button>
-    </div>
-
-  </div>
-
 
   <div class="company">
-  <h1>Company</h1>
-  <button class="order">Order</button>    
-  <button class="story">Our Story</button>    
-  <button class="Rewards">Rewards</button>    
-  <button class="Support">Support</button>    
-  <button class="Blog">Blog</button>    
-  <button class="Gift">Gift Card Balance</button>    
-  <button class="map">Flavors Map</button> 
-  
+    <h1>Company</h1>
+    <button class="order">Order</button>
+    <button class="story">Our Story</button>
+    <button class="Rewards">Rewards</button>
+    <button class="Support">Support</button>
+    <button class="Blog">Blog</button>
+    <button class="Gift">Gift Card Balance</button>
+    <button class="map">Flavors Map</button>
+
 
   </div>
 
@@ -266,8 +132,8 @@
     <img src="pinterest.svg" alt="">
   </div>
 
-
-<script src="index.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="index.js" defer></script>
 
 </body>
 
