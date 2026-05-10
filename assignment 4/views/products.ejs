@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Catalog</title>
+  <link rel="stylesheet" href="/css/styleProducts.css">
+</head>
+<body>
+
+  <h1>Cookie Catalog</h1>
+
+  <!-- FILTER FORM -->
+  <form action="/products" method="GET">
+
+    <input type="text" name="search" placeholder="Search cookies..." value="<%= search %>">
+
+    <select name="category">
+      <option value="">All Categories</option>
+      <option value="Classic"  <%= category === 'Classic'  ? 'selected' : '' %>>Classic</option>
+      <option value="Weekly"   <%= category === 'Weekly'   ? 'selected' : '' %>>Weekly</option>
+      <option value="Seasonal" <%= category === 'Seasonal' ? 'selected' : '' %>>Seasonal</option>
+    </select>
+
+    <input type="number" name="minPrice" placeholder="Min Price" value="<%= minPrice %>">
+    <input type="number" name="maxPrice" placeholder="Max Price" value="<%= maxPrice %>">
+
+    <button type="submit">Filter</button>
+    <a href="/products">Reset</a>
+
+  </form>
+
+  <!-- PRODUCT GRID -->
+  <div class="grid">
+
+    <% if (products.length === 0) { %>
+      <p>No cookies found!</p>
+    <% } %>
+
+    <% products.forEach(function(product) { %>
+      <div class="card">
+        <img src="<%= product.image %>" alt="<%= product.name %>">
+        <p class="category"><%= product.category %></p>
+        <h2><%= product.name %></h2>
+        <p class="price">$<%= product.price.toFixed(2) %></p>
+        <p class="rating">Rating: <%= product.rating %>/5</p>
+        <p class="stock">Stock: <%= product.stock %></p>
+        <button>Order Now</button>
+      </div>
+    <% }); %>
+
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+
+    <a href="/products?page=<%= currentPage - 1 %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>" class="<%= currentPage === 1 ? 'disabled' : '' %>">Prev</a>
+
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <a href="/products?page=<%= i %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+
+    <a href="/products?page=<%= currentPage + 1 %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>" class="<%= currentPage === totalPages ? 'disabled' : '' %>">Next</a>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Cookie</title>
+<link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+  <div class="form-box">
+    <h1>✏️ Edit Cookie</h1>
+
+    <!--  _method=PUT makes this a PUT request via method-override  -->
+    <form action="/admin/products/<%= product._id %>?_method=PUT"
+          method="POST" enctype="multipart/form-data">
+
+      <label>Cookie Name</label>
+      <input type="text" name="name" value="<%= product.name %>" required>
+
+      <label>Category</label>
+      <select name="category" required>
+        <option value="Classic"  <%= product.category === 'Classic'  ? 'selected' : '' %>>Classic</option>
+        <option value="Weekly"   <%= product.category === 'Weekly'   ? 'selected' : '' %>>Weekly</option>
+        <option value="Seasonal" <%= product.category === 'Seasonal' ? 'selected' : '' %>>Seasonal</option>
+      </select>
+
+      <label>Price ($)</label>
+      <input type="number" name="price" step="0.01" value="<%= product.price %>" required>
+
+      <label>Rating (0–5)</label>
+      <input type="number" name="rating" step="0.1" value="<%= product.rating %>" required>
+
+      <label>Stock</label>
+      <input type="number" name="stock" value="<%= product.stock %>" required>
+
+      <label>Current Image</label>
+      <img class="current-img" src="<%= product.image %>" alt="current">
+
+      <label>Upload New Image (leave blank to keep current)</label>
+      <input type="file" name="image" accept="image/*">
+
+      <button type="submit" class="submit-btn">Save Changes</button>
+    </form>
+
+    <a class="back" href="/admin">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

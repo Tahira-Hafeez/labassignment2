@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Cookie</title>
+<link rel="stylesheet" href="/css/add.css">
+</head>
+<body>
+  <div class="form-box">
+    <h1>➕ Add New Cookie</h1>
+
+    <form action="/admin/products" method="POST" >
+
+      <label>Cookie Name</label>
+      <input type="text" name="name" placeholder="e.g. S'mores Cookie" required>
+
+      <label>Category</label>
+      <select name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="Classic">Classic</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Seasonal">Seasonal</option>
+      </select>
+
+      <label>Price ($)</label>
+      <input type="number" name="price" step="0.01" min="0" placeholder="e.g. 4.49" required>
+
+      <label>Rating (0–5)</label>
+      <input type="number" name="rating" step="0.1" min="0" max="5" placeholder="e.g. 4.8" required>
+
+      <label>Stock</label>
+      <input type="number" name="stock" min="0" placeholder="e.g. 30" required>
+
+      <label>Product Image (optional)</label>
+      <input type="file" name="image" accept="image/*">
+
+      <button type="submit" class="submit-btn">Add Cookie</button>
+    </form>
+
+    <a class="back" href="/admin">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+/*ASSIGMENT 3*/
+
+/*  General  */
+body {
+  font-family: sans-serif;
+  padding: 30px;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  margin-bottom: 20px;
+}
+/* ───────────────────────────────
+   Filter Form
+─────────────────────────────── */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form input,
+form select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+form button {
+  padding: 8px 20px;
+  background: #d63384;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form a {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+}
+
+/* ───────────────────────────────
+   Product Grid
+─────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 0.95rem;
+  margin: 8px 0 4px;
+}
+
+.card .category {
+  display: inline-block;
+  background: #ffd6e7;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  margin: 6px 0;
+}
+
+.card .price {
+  color:  #ff8ab4;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.card .rating {
+  color: #f5a623;
+  font-size: 0.9rem;
+}
+
+.card .stock {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 7px 18px;
+  background: #ff8ab4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card button:hover{
+    background-color: black;
+    color: white;
+}
+
+/* ───────────────────────────────
+   Pagination
+─────────────────────────────── */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.pagination a {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination a.active {
+  background:  #ff8ab4;
+  color: white;
+  border-color:  #ff8ab4;
+  font-weight: bold;
+}
+
+.pagination a.disabled {
+  pointer-events: none;
+  opacity: 0.35;
+}
+
