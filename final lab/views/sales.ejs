@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sales</title>
+  <link rel="stylesheet" href="/css/sales.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Admin Panel</h3>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/addProduct">Add Product</a>
+    <a href="/sales" class="active">Sales</a>
+    <a href="/">Go to Home</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="sales-shell">
+      <h2>Sales Dashboard <span class="live-badge">● LIVE</span></h2>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+<div class="label">Total Revenue</div>
+<div class="value" id="stat-revenue">
+  PKR <%= totalRevenue.toFixed(2) %>
+</div>        </div>
+        <div class="stat-card">
+          <div class="label">Total Orders</div>
+          <div class="value" id="stat-orders"><%= totalOrders %></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Top Product</div>
+          <div class="value" id="stat-top-name" style="font-size:1.1rem"><%= topProduct.name %></div>
+          <div class="sub" id="stat-top-sold"><%= topProduct.sold %> units sold</div>
+        </div>
+      </div>
+
+      <h4 style="margin-bottom:12px">Recent Orders</h4>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Order ID</th><th>Items</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <% recentOrders.forEach((order, i) => { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= order._id %></td>
+            <td>
+              <% order.products.forEach(p => { %>
+                <%= p.name %> ×<%= p.quantity %><br>
+              <% }) %>
+            </td>
+            <td><%= new Date(order.createdAt).toLocaleDateString() %></td>
+          </tr>
+          <% }) %>
+          <% if (recentOrders.length === 0) { %>
+          <tr><td colspan="4" style="text-align:center;color:#aaa;padding:24px">No orders yet.</td></tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <div class="last-updated">Last updated: <span id="last-updated-time">just now</span></div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      setInterval(function () {
+        $.getJSON("/api/sales-data", function (data) {
+          $("#stat-revenue").text("PKR" + parseFloat(data.totalRevenue).toFixed(2));
+          $("#stat-orders").text(data.totalOrders);
+          $("#stat-top-name").text(data.topProduct.name);
+          $("#stat-top-sold").text(data.topProduct.sold + " units sold");
+          $("#last-updated-time").text(new Date().toLocaleTimeString());
+        });
+      }, 10000);
+    });
+  </script>
+
+</body>
+</html>

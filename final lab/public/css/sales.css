@@ -1,0 +1,144 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  font-family: monospace;
+  background: #f4f4f4;
+  min-height: 100vh;
+     font-family: "Inter", "Segoe UI", 
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 220px;
+  background: #ff8abf;
+  color: #fff;
+  min-height: 100vh;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: .85rem;
+  transition: background .2s, color .2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #e55d9a;
+  color: white;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  flex: 1;
+  padding: 40px 32px;
+}
+
+.sales-shell {
+  max-width: 900px;
+}
+
+h2 {
+  margin-bottom: 28px;
+  font-size: 1.5rem;
+}
+
+/* ── STAT CARDS ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  transition: transform .2s, box-shadow .2s;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.stat-card .label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.stat-card .value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.stat-card .sub {
+  font-size: .75rem;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+/* ── TABLE ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+th {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 2px solid #eee;
+  color: #888;
+  font-weight: 500;
+}
+
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #fafafa; }
+
+.last-updated {
+  text-align: right;
+  font-size: .7rem;
+  color: #aaa;
+  margin-top: 12px;
+}
+
+.live-badge {
+  font-size: .7rem;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
